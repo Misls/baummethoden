@@ -12,10 +12,15 @@
 
 ## create python virtual env in powershell
 
-- python -m venv .venv or python3 -m venv .venv
-- Set-ExecutionPolicy Unrestricted -Scope Process
-- .venv\Scripts\Activate.ps1
+- comand: python -m venv .venv or python3 -m venv .venv
+- comand: Set-ExecutionPolicy Unrestricted -Scope Process
+- comand: .venv\Scripts\Activate.ps1
 
 ## run python files in shell
 
 - phython document.py
+
+## requiremnt management
+
+- create text file 'requirements.txt'
+- isnstall required packages for example: pip install pandas
