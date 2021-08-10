@@ -12,6 +12,10 @@
 
 ## create python virtual env in powershell
 
-python -m venv .venv or python3 -m venv .venv
-Set-ExecutionPolicy Unrestricted -Scope Process
-.venv\Scripts\Activate.ps1
+- python -m venv .venv or python3 -m venv .venv
+- Set-ExecutionPolicy Unrestricted -Scope Process
+- .venv\Scripts\Activate.ps1
+
+## run python files in shell
+
+- phython document.py
