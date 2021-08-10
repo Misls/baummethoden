@@ -6,7 +6,7 @@
 - git branch
 - git checkout
 - git add .
-- git commit
+- git commit -m 'update info'
 - git push
 - git pull
 
