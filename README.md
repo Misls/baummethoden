@@ -5,6 +5,13 @@
 - git clone
 - git branch
 - git checkout
+- git add .
 - git commit
 - git push
 - git pull
+
+## create python virtual env in powershell
+
+python -m venv .venv or python3 -m venv .venv
+Set-ExecutionPolicy Unrestricted -Scope Process
+.venv\Scripts\Activate.ps1
