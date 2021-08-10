@@ -24,3 +24,5 @@
 
 - create text file 'requirements.txt'
 - isnstall required packages for example: pip install pandas
+- Alle Dependencies in einem requirements.txt file speichern: pip freeze > requirements.txt
+- Alle Dependencies aus einem requirements.txt file installieren: pip install –r requirements.txt
