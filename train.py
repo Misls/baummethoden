@@ -89,3 +89,11 @@ k_fold_scores = cross_val_score(model, x_variables, y_variable, cv=k_fold, n_job
 mean_accuracy = np.mean(k_fold_scores)
 
 print('k-fold mean accuracy:{}' .format(round(mean_accuracy, 4)))
+
+#save model as pkl-file
+import pickle
+
+Pkl_Filename = "Pickle_CART_Model.pkl"  
+
+with open(Pkl_Filename, 'wb') as file:  
+    pickle.dump(model, file)
