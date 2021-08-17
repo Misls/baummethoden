@@ -20,6 +20,6 @@ jobs:
       - name: model training
         run: |
           python train.py
-      - name: Test with pytest
-        run: |
-          pytest
+      #- name: Test with pytest
+        #run: |
+          #pytest
