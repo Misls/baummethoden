@@ -16,7 +16,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt; fi
+          pip install -r requirements.txt
       - name: model training
         run: |
           python train.py
