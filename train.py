@@ -97,3 +97,5 @@ Pkl_Filename = "Pickle_CART_Model.pkl"
 
 with open(Pkl_Filename, 'wb') as file:  
     pickle.dump(model, file)
+
+x_test.to_pickle("./Xdata.pkl")
