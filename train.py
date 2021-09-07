@@ -1,38 +1,29 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import numpy as np
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import classification_report, confusion_matrix  
-from sklearn.model_selection import KFold, cross_val_score
+from sklearn.tree import DecisionTreeRegressor 
 import pickle
 
-#List with attribute names (it is optional to do this but it gives a better understanding of the data for a human reader)
-attribute_names = ['variance_wavelet_transformed_image', 'skewness_wavelet_transformed_image', 'curtosis_wavelet_transformed_image', 'entropy_image', 'class']
-
 #Read csv-file
-data = pd.read_csv('data_banknote_authentication.txt', names=attribute_names)
+data = pd.read_csv('data/auto-mpg.csv', sep=";")
 
 #Shuffle data
 data = data.sample(frac=1)
+
 #'class'-column
-y_variable = data['class']
+y_variable = data['mpg']
 
 #all columns that are not the 'class'-column -> all columns that contain the attributes
-x_variables = data.loc[:, data.columns != 'class']
+x_variables = data.loc[:, data.columns != 'mpg']
 
-#splits into training and test data
+
 x_train, x_test, y_train, y_test = train_test_split(x_variables, y_variable, test_size=0.2)
 
-#Create a classifier object 
-model = DecisionTreeClassifier()
+regressor = DecisionTreeRegressor() 
 
-#Classfier builds Decision Tree with training data
-model = model.fit(x_train, y_train) 
+regressor = regressor.fit(x_train, y_train) 
 
-#save model as pkl-file
-Pkl_Filename = "Pickle_CART_Model.pkl"  
+y_pred = regressor.predict(x_test) 
 
-with open(Pkl_Filename, 'wb') as file:  
-    pickle.dump(model, file)
-
-x_test.to_pickle("./Xdata.pkl")
+file_to_write = open("models/baummethoden.pickle", "wb")
+pickle.dump(regressor, file_to_write)

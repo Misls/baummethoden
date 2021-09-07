@@ -1,15 +1,12 @@
-#create prediction for the save model
-import pickle
 import pandas as pd
+import pickle
 
-Pkl_Filename = "Pickle_CART_Model.pkl" 
+# load trained model
+file_to_open = open("models/baummethoden.pickle",'rb')
+trained_model = pickle.load(file_to_open)
+file_to_open.close()
 
-with open(Pkl_Filename, 'rb') as file:  
-    Pickled_Model = pickle.load(file)
+# load data that we want predictions for
+prediction_data = pd.read_csv('data/prediction_input_mpg.csv', sep=";")
 
-print(Pickled_Model)
-
-Xdata = pd.read_pickle("./Xdata.pkl")
-Ypredict = Pickled_Model.predict(Xdata)
-
-print(Ypredict)
+print(trained_model.predict(prediction_data))
